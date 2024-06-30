@@ -1,15 +1,15 @@
-import type { Config } from "tailwindcss"
-import {fontFamily} from "tailwindcss/defaultTheme"
-import plugin from "tailwindcss/plugin"
+import type { Config } from "tailwindcss";
+import { fontFamily, borderRadius, boxShadow } from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -23,6 +23,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -63,6 +64,10 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        ...boxShadow,
+        'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 2px 2px 2px 2px rgba(0, 0, 0, 0.06)',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -79,10 +84,57 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), 
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    plugin(function ({ addBase, addComponents, addUtilities }) {
+      addComponents({
+        ".flexj-start": {
+          "@apply flex items-center justify-start": {},
+        },
+        ".border-xs": {
+          "@apply  border": {},
+        },
+        ".border-sm": {
+          "@apply  border-2": {},
+        },
+        ".border-md": {
+          "@apply  border-[5px]": {},
+        },
+        ".border-lg": {
+          "@apply  border-[6px]": {},
+        },
+        ".border-xl": {
+          "@apply  border-[7px]": {},
+        },
+        ".flexj-end": {
+          "@apply flex items-center justify-end": {},
+        },
+        ".flex-center": {
+          "@apply flex items-center justify-center": {},
+        },
+        ".flex-start": {
+          "@apply flex items-start justify-center": {},
+        },
+        ".flex-end": {
+          "@apply flex items-end justify-center": {},
+        },
+        ".flexr-center": {
+          "@apply flex flex-row items-center justify-center": {},
+        },
+        ".flexr-between": {
+          "@apply flex flex-row items-center justify-between": {},
+        },
+        ".flexrs-between": {
+          "@apply flex flex-row-reverse items-center justify-between": {},
+        },
+        ".flexc-center": {
+          "@apply flex flex-col items-center justify-center": {},
+        },
 
-    plugin(function({addBase,addComponents, addUtilities}){})
+      })
+    }),
   ],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
