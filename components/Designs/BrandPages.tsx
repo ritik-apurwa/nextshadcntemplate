@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
 import { brands } from "../../public";
 import BrandCard from "./BrandCard";
+import { useParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 const BrandPage: React.FC = () => {
   const { brandName } = useParams<{ brandName: string }>();
-  const navigate = useNavigate();
+  const navigate = useRouter();
 
-  const brand = brands.find((b) => b.brandName.toLowerCase() === brandName?.toLowerCase());
+  const brand = brands.find(
+    (b) => b.brandName.toLowerCase() === brandName?.toLowerCase()
+  );
 
   useEffect(() => {
     if (brand) {

@@ -1,4 +1,3 @@
-import {} from "react-icons";
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 const Contact = () => {

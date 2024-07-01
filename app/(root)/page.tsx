@@ -3,7 +3,7 @@ import React from 'react'
 
 const page = () => {
   return (
-  <section className='flex w-full h-full'>
+  <section className='flex overflow-hidden'>
      <Home/>
   </section>
   )

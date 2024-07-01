@@ -5,12 +5,12 @@ import Image from "next/image";
 export default function MorphDetails() {
   return (
     <section className="relative  max-w-7xl mx-auto">
-      <div className="home relative py-10">
+      <div className="home relative mx-auto  py-10">
         <Image 
           src={bannerimg.src}
           loading="lazy"
-          height={500}
-          width={500}
+          height={1000}
+          width={1000}
           className="w-full h-auto object-cover"
           alt="banner"
         />
@@ -29,7 +29,7 @@ export default function MorphDetails() {
         {/* Content box for larger devices */}
         <div className="hidden sm:block absolute top-1/2 left-8 transform -translate-y-1/2  p-6 rounded-lg  max-w-md">
           <h2 className="text-2xl font-bold mb-4 text-indigo-600">Best & Trusted </h2>
-          <p className="text-gray-700 mb-4">
+          <p className="text-gray-700 mb-4 max-w-[30ch]">
           Ac, led lcd tv, washing machine, micro oven service center in mumbai
           </p>
           <button className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors">

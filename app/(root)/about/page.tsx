@@ -1,7 +1,8 @@
+"use client"
+
 import { FaCogs, FaUsers, FaAward, FaHandshake } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
-
 import React from "react";
 import BendoStyle from "@/components/Designs/BendoGrid";
 

@@ -1,3 +1,5 @@
+"use client"
+
 import ServiceCard from "@/components/Designs/ServiceDetails";
 import { ServiceDetailsInterface, Services } from "@/public";
 import React from "react";

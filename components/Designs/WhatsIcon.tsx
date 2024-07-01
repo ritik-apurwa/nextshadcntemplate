@@ -2,7 +2,8 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import DynamicBorderDiv from "./DynamicBorder";
 import { FaWhatsapp } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+
 
 export default function IconBorderProgress() {
   const { scrollY } = useScroll();
@@ -20,7 +21,7 @@ export default function IconBorderProgress() {
     setScrollPercentage(scrollPercent);
   });
   return (
-    <Link to="https://wa.me/+916376358708" className="  relative ">
+    <Link href="https://wa.me/+916376358708" className="  relative ">
       <DynamicBorderDiv
         progress={scrollPercentage}
         circleRadius={45}

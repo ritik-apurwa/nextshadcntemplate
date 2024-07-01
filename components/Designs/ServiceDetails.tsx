@@ -1,4 +1,6 @@
 // ServiceDetail.tsx
+
+"use client"
 import React from "react";
 import { FiArrowLeft } from "react-icons/fi"; // Example: using Feather Icons
 import MotionDiv from "./MotionDiv";
