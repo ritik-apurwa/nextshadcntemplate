@@ -1,5 +1,4 @@
-
-"use client"
+"use client";
 import React from "react";
 import Contact from "./Contact";
 import GetInTouch from "./GetInTouch";
@@ -29,8 +28,6 @@ const Home: React.FC = () => {
         <section id="services" className="w-screen">
           <ServiceGrid />
         </section>
-       
-       
         <AnimatedSection id="contact" key="contact">
           <Contact />
         </AnimatedSection>
